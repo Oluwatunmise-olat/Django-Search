@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Searching Django</title>
+</head>
+<body>
+    <p>Django search with Gin index</p>
+    <form action="." method="get">
+        {{ form.as_p }}
+        <input type="submit" value="search">
+    </form>
+
+    {% if results %}
+    <ul>
+        {% for result in results %}
+        <li>Title: {{result.title}} : Author: {{result.authors}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
